@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app/provider/cart.dart';
 import 'package:shop_app/provider/product.dart';
+import 'package:shop_app/screens/cart_screen.dart';
+import 'package:shop_app/wedgits/app_drawer.dart';
 import 'package:shop_app/wedgits/bedge.dart';
 import 'package:shop_app/wedgits/product_grid.dart';
 import 'package:shop_app/wedgits/product_items.dart';
@@ -50,13 +52,14 @@ class _ProductOverViewState extends State<ProductOverView> {
                 child: IconButton(
                   icon: Icon(Icons.shopping_cart),
                   onPressed: (){
-
+Navigator.of(context).pushNamed(CartScreen.routeName);
                   },
                 ),
                 ),
 
         ],
       ),
+      drawer: AppDrawer(),
       body: ProductGrid(_showFavorite),
     );
   }
